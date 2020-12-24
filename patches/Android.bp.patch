@@ -1,0 +1,16 @@
+diff --git a/Android.bp b/Android.bp
+index 83d60c0..66ceebd 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -11,6 +11,11 @@ rust_library {
+     rustlibs: [
+         "libmatches",
+     ],
++    apex_available: [
++        "//apex_available:platform",
++        "com.android.resolv",
++    ],
++    min_sdk_version: "29",
+ }
+ 
+ rust_defaults {
