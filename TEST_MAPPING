@@ -2,10 +2,6 @@
 {
   "presubmit": [
     {
-      "host": true,
-      "name": "unicode-bidi_host_test_src_lib"
-    },
-    {
       "name": "unicode-bidi_device_test_src_lib"
     }
   ]
