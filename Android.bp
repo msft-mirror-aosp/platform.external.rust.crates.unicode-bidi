@@ -40,11 +40,10 @@ license {
 
 rust_library {
     name: "libunicode_bidi",
-    // has rustc warnings
     host_supported: true,
     crate_name: "unicode_bidi",
     srcs: ["src/lib.rs"],
-    edition: "2015",
+    edition: "2018",
     features: ["default"],
     rustlibs: [
         "libmatches",
@@ -59,11 +58,10 @@ rust_library {
 rust_defaults {
     name: "unicode-bidi_defaults",
     crate_name: "unicode_bidi",
-    // has rustc warnings
     srcs: ["src/lib.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
-    edition: "2015",
+    edition: "2018",
     features: ["default"],
     rustlibs: [
         "libmatches",
@@ -86,5 +84,5 @@ rust_test {
 
 // dependent_library ["feature_list"]
 //   matches-0.1.8
-//   serde-1.0.125 "default,std"
-//   serde_test-1.0.125
+//   serde-1.0.126 "default,std"
+//   serde_test-1.0.126
