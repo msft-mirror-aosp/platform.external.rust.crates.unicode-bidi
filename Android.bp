@@ -42,11 +42,13 @@ rust_library {
     name: "libunicode_bidi",
     host_supported: true,
     crate_name: "unicode_bidi",
+    cargo_env_compat: true,
+    cargo_pkg_version: "0.3.6",
     srcs: ["src/lib.rs"],
     edition: "2018",
-    features: ["default"],
-    rustlibs: [
-        "libmatches",
+    features: [
+        "default",
+        "std",
     ],
     apex_available: [
         "//apex_available:platform",
@@ -56,22 +58,26 @@ rust_library {
 }
 
 rust_defaults {
-    name: "unicode-bidi_defaults",
+    name: "unicode-bidi_test_defaults",
     crate_name: "unicode_bidi",
     srcs: ["src/lib.rs"],
+    cargo_env_compat: true,
+    cargo_pkg_version: "0.3.6",
     test_suites: ["general-tests"],
     auto_gen_config: true,
     edition: "2018",
-    features: ["default"],
+    features: [
+        "default",
+        "std",
+    ],
     rustlibs: [
-        "libmatches",
         "libserde_test",
     ],
 }
 
 rust_test_host {
     name: "unicode-bidi_host_test_src_lib",
-    defaults: ["unicode-bidi_defaults"],
+    defaults: ["unicode-bidi_test_defaults"],
     test_options: {
         unit_test: true,
     },
@@ -79,10 +85,5 @@ rust_test_host {
 
 rust_test {
     name: "unicode-bidi_device_test_src_lib",
-    defaults: ["unicode-bidi_defaults"],
+    defaults: ["unicode-bidi_test_defaults"],
 }
-
-// dependent_library ["feature_list"]
-//   matches-0.1.8
-//   serde-1.0.126 "default,std"
-//   serde_test-1.0.126
