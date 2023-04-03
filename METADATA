@@ -11,13 +11,13 @@ third_party {
   }
   url {
     type: ARCHIVE
-    value: "https://static.crates.io/crates/unicode-bidi/unicode-bidi-0.3.10.crate"
+    value: "https://static.crates.io/crates/unicode-bidi/unicode-bidi-0.3.13.crate"
   }
-  version: "0.3.10"
+  version: "0.3.13"
   license_type: NOTICE
   last_upgrade_date {
     year: 2023
-    month: 2
-    day: 6
+    month: 3
+    day: 30
   }
 }
