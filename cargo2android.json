@@ -6,5 +6,6 @@
   "dependencies": true,
   "device": true,
   "min-sdk-version": "29",
-  "run": true
+  "run": true,
+  "tests": true
 }
